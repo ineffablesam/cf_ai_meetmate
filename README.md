@@ -99,25 +99,58 @@ MeetMate is a Chrome extension that leverages Cloudflare Workers AI to automatic
 ## 📁 Project Structure
 
 ```
-meetmate/
-├── meetmate-backend/          # Cloudflare Workers backend
-│   ├── src/
-│   │   └── index.js          # Main Worker code
-│   ├── wrangler.toml         # Cloudflare configuration
-│   ├── package.json
-│   └── schema.sql            # D1 database schema
-│
-└── meetmate-extension/        # Chrome extension
-    ├── manifest.json         # Extension configuration
-    ├── popup.html            # Extension popup UI
-    ├── popup.js              # Popup logic
-    ├── content.js            # Content script (Meet integration)
-    ├── background.js         # Background service worker
-    ├── styles.css            # Extension styles
-    └── icons/                # Extension icons
-        ├── icon16.png
-        ├── icon48.png
-        └── icon128.png
+meetmate-backend/                      # ⚙️ Cloudflare Workers backend
+├── migrations/                        # SQL schema & migration scripts for D1 database
+│   ├── 0001_init.sql                  # Initial database setup
+│   └── 0002.sql                       # Additional schema updates
+├── package-lock.json                  # Dependency lock file
+├── package.json                       # Backend dependencies & scripts
+├── src/                               # Source code for Worker logic
+│   └── index.js                       # Main Worker entry point
+├── test/                              # Unit and integration tests
+│   └── index.spec.js                  # Tests for main Worker functionality
+├── vitest.config.js                   # Vitest testing framework configuration
+└── wrangler.jsonc                     # Cloudflare Wrangler configuration file
+
+
+meetmate-extension/                    # 🧩 Chrome Extension (Vite + React)
+├── eslint.config.js                   # ESLint configuration for linting
+├── index.html                         # Root HTML entry point for Vite
+├── package-lock.json                  # Dependency lock file
+├── package.json                       # Extension dependencies & scripts
+├── postcss.config.js                  # PostCSS configuration for Tailwind CSS
+├── public/                            # Static assets served directly
+│   └── vite.svg                       # Default Vite logo
+├── README.md                          # Project documentation
+├── src/                               # Source code for the Chrome extension
+│   ├── App.css                        # App-wide CSS
+│   ├── App.jsx                        # Root React component
+│   ├── assets/                        # Images and static media
+│   │   └── react.svg                  # React logo
+│   ├── background.js                  # Background service worker
+│   ├── components/                    # React UI components
+│   │   ├── Dashboard.jsx              # Main dashboard view
+│   │   ├── Login.jsx                  # Authentication view
+│   │   ├── PreviousSummaries.jsx      # Displays past meeting summaries
+│   │   ├── RecordingPanel.jsx         # Active recording interface
+│   │   └── SummaryView.jsx            # Summary details page
+│   ├── content.js                     # Content script injected into Google Meet
+│   ├── hooks/                         # Custom React hooks
+│   │   └── useStore.js                # Zustand or React state management hook
+│   ├── index.css                      # Base styling
+│   ├── main.jsx                       # React app entry file
+│   ├── manifest.json                  # Chrome extension manifest
+│   ├── offscreen.html                 # Offscreen document for background recording
+│   ├── offscreen.js                   # Logic handling offscreen audio/video processing
+│   ├── popup.html                     # Popup UI for quick actions
+│   ├── services/                      # API and business logic
+│   │   ├── api.js                     # API service for backend communication
+│   │   ├── auth.js                    # Authentication utilities
+│   │   └── recording.js               # Recording and transcript handling
+│   └── styles/                        # Global and shared styles
+│       └── global.css                 # Tailwind & custom global styles
+├── tailwind.config.js                 # Tailwind CSS configuration
+└── vite.config.js                     # Vite bundler configuration
 ```
 
 ## 🚀 Setup & Installation
@@ -131,7 +164,7 @@ meetmate/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/meetmate.git
+gh repo clone ineffablesam/cf_ai_meetmate
 cd meetmate
 ```
 
@@ -302,7 +335,7 @@ CREATE INDEX IF NOT EXISTS idx_processing_status_meeting_id ON processing_status
 2. **Join a Google Meet** - Open any Google Meet call
 3. **Click Extension Icon** - Sign in with Google
 4. **Start Recording** - Click "Start Recording" button
-5. **AI Processing** - Watch real-time transcription
+5. **AI Processing** - Watch real-time transcription (expiremental)
 6. **Get Summary** - Receive AI-generated summary when meeting ends
 7. **Access History** - View all past meetings in the extension
 
@@ -586,45 +619,20 @@ zip -r meetmate-extension.zip . -x "*.git*" "*.DS_Store"
 
 **Solution:** Implemented PKCE flow with state management. Used Chrome storage API for secure token persistence.
 
-## 🚀 Future Enhancements
-
-### Planned Features
-- [ ] **Multi-language Support** - Transcribe meetings in 50+ languages
-- [ ] **Speaker Diarization** - Identify different speakers automatically
-- [ ] **Real-time Collaboration** - Share summaries with team members
-- [ ] **Calendar Integration** - Auto-schedule follow-ups from action items
-- [ ] **Slack/Teams Integration** - Post summaries to channels
-- [ ] **Custom AI Prompts** - Let users customize summary format
-- [ ] **Search & Analytics** - Search across all meetings, track topics
-- [ ] **PDF Export** - Download formatted PDF reports
-- [ ] **Video Timestamps** - Link summary points to video moments
-- [ ] **Mobile App** - iOS/Android companion apps
-
-### Technical Improvements
-- [ ] Implement WebSocket for real-time streaming
-- [ ] Add Redis caching for faster loads
-- [ ] Optimize AI prompts for better summaries
-- [ ] Add end-to-end encryption for transcripts
-- [ ] Implement rate limiting and abuse prevention
-- [ ] Add comprehensive test suite
-
-## 📄 License
-
-MIT License - feel free to use this project for learning and building!
 
 ## 🙏 Acknowledgments
 
 - **Cloudflare** - For the amazing Workers platform and AI infrastructure
 - **OpenAI** - Whisper model for transcription
 - **Meta** - Llama 3.3 for summarization
-- **Google** - Meet API and OAuth
+- **Google** - OAuth
 
 ## 👨‍💻 Author
 
-**[Your Name]**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+**[Samuel Philip]**
+- GitHub: [@yourusername](https://github.com/ineffablesam)
+- Email: samuelphilip2k3@gmail.com
+- LinkedIn: [Open LinkedIn](http://linkedin.com/in/samuel-philip-v/)
 
 ---
 
