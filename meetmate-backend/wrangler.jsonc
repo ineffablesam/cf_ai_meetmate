@@ -1,0 +1,32 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "meetmate-backend",
+	"main": "src/index.js",
+	"compatibility_date": "2025-10-11",
+	"observability": {
+	  "enabled": true
+	},
+	"d1_databases": [
+	  {
+		"binding": "DB",
+		"database_name": "meetings",
+		"database_id": "08f747fa-2d21-43e8-afea-4a2dd210e4b0"
+	  }
+	],
+	"r2_buckets": [
+	  {
+		"binding": "BUCKET",
+		"bucket_name": "meetmate-recordings"
+	  }
+	],
+	"ai": {
+	  "binding": "AI"
+	},
+	"vars": {
+	  "GOOGLE_CLIENT_ID": "976826121141-bo2jaaqtkprj1spqi6d34mppoindtu8a.apps.googleusercontent.com",
+	  "GOOGLE_REDIRECT_URI": "https://meetmate-backend.sam7075938131.workers.dev/api/auth/callback",
+	  "EXTENSION_ID": "pmnpeonnfgfkjjgkpnhmgncdfddbeggg"
+	}
+	// Note: GOOGLE_CLIENT_SECRET should be set as a secret using:
+	// wrangler secret put GOOGLE_CLIENT_SECRET
+  }

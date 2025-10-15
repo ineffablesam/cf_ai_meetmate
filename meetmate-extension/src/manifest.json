@@ -1,0 +1,48 @@
+{
+    "manifest_version": 3,
+    "name": "AI Meeting Summarizer",
+    "version": "1.0.0",
+    "description": "AI-powered Google Meet summarizer using Cloudflare Workers",
+    "permissions": [
+      "tabCapture",
+      "activeTab",
+      "downloads",
+      "offscreen",
+      "storage",
+      "webRequest",
+      "identity"
+    ],
+    "host_permissions": [
+      "https://meet.google.com/*",
+      "<all_urls>"
+    ],
+    "action": {
+      "default_popup": "src/popup.html",
+      "default_icon": {
+       
+      },
+      "default_title": "AI Meeting Summarizer"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://meet.google.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_start"
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "src/offscreen.html",
+          "offscreen.js"
+        ],
+        "matches": ["<all_urls>"]
+      }
+    ],
+    "icons": {
+    
+    }
+  }
