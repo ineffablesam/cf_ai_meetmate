@@ -677,7 +677,7 @@ zip -r meetmate-extension.zip . -x "*.git*" "*.DS_Store"
 ## 👨‍💻 Author
 
 **[Samuel Philip]**
-- GitHub: [@yourusername](https://github.com/ineffablesam)
+- GitHub: [@ineffablesam](https://github.com/ineffablesam)
 - Email: samuelphilip2k3@gmail.com
 - LinkedIn: [Open LinkedIn](http://linkedin.com/in/samuel-philip-v/)
 
