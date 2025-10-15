@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+  @apply font-syne;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }

@@ -136,16 +136,18 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500">
+    <div className="min-h-screen bg-gradient-to-br from-[#FF6633] to-[#FF6633]">
       {/* Header */}
       <header className="bg-white shadow-lg">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">🔹</span>
-            </div>
-            <h1 className="text-2xl font-bold text-gray-800">Meet Summarizer</h1>
-          </div>
+        <div className="flex items-center gap-3">
+          <img
+            src="/logo-color.svg"
+            alt="MeetMate logo"
+            className="w-32 rounded-lg"
+          />
+        </div>
+
           <div className="flex items-center gap-4">
             {isRecording && (
               <div className="flex items-center gap-2 px-3 py-1 bg-red-100 rounded-full">

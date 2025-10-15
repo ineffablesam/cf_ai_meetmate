@@ -1,14 +1,62 @@
-# 🎙️ MeetMate - AI-Powered Meeting Transcription & Summarization
+# MeetMate - AI-Powered Meeting Transcription & Summarization
 
 > **Cloudflare Early Talent**
 
+<p align="center">
+  <img src="./assets/banner.png"/>
+</p>
+
 MeetMate is a Chrome extension that leverages Cloudflare Workers AI to automatically transcribe and summarize Google Meet conversations in real-time. Built entirely on Cloudflare's infrastructure with Workers, D1 Database, R2 Storage, and Workers AI.
 
-![MeetMate Demo](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
+![MeetMate](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
 ![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-orange)
 ![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-blue)
 
-## 📋 Table of Contents
+---
+
+## ✨ Introducing MeetMate
+MeetMate transforms your Google Meet sessions into organized, searchable knowledge.  
+Built entirely on **Cloudflare Workers, D1, R2, and Workers AI**, it transcribes and summarizes meetings with speed, security, and elegance.
+
+![Introducing MeetMat](./assets/slides/intro.png)
+
+---
+
+## 🪪 Sign In Seamlessly
+Log in with Google and stay connected wherever you go. MeetMat securely stores your account so your meetings and transcripts are always within reach.
+
+![Sign In Screen](./assets/slides/login.png)
+
+---
+
+## 🏠 Your Home Dashboard
+Jump right into work with quick access to recent meetings and one-tap recording. A clean, distraction-free interface built for focus and productivity.
+
+![Home Dashboard](./assets/slides/home.png)
+
+---
+
+## 📜 Meeting History, Organized
+Revisit past meetings effortlessly. View or download transcripts in Markdown or plain text — your entire conversation archive, neatly managed.
+
+![Meeting History](./assets/slides/history.png)
+
+---
+
+## 🧠 AI Transcript & Summary
+Experience your meetings reimagined. Switch between structured and Markdown views to explore full transcriptions and AI-generated insights side by side.
+
+![Transcript & Summary](./assets/slides/transcript.png)
+
+---
+
+## 🪄 Structured AI Summary
+See your meeting distilled into key points, action items, and decisions — beautifully formatted and instantly shareable. Clarity powered by Cloudflare AI.
+
+![Structured Summary](./assets/slides/summary.png)
+
+
+## Table of Contents
 
 - [Features](#-features)
 - [Architecture](#-architecture)
@@ -21,21 +69,20 @@ MeetMate is a Chrome extension that leverages Cloudflare Workers AI to automatic
 - [Database Schema](#-database-schema)
 - [Development](#-development)
 - [Deployment](#-deployment)
-- [Demo Video](#-demo-video)
 - [Challenges & Solutions](#-challenges--solutions)
 - [Future Enhancements](#-future-enhancements)
 
-## ✨ Features
+##  Features
 
 ### Core Functionality
-- 🎤 **Real-time Audio Recording** - Capture Google Meet audio directly from the browser
-- 🗣️ **AI Transcription** - Powered by Cloudflare Workers AI (Whisper model)
-- 📝 **Smart Summarization** - Uses Llama 3.3 70B to generate structured summaries
-- 💾 **Cloud Storage** - Secure storage with Cloudflare R2
-- 🔐 **Google OAuth** - Seamless authentication
-- 📧 **Email Notifications** - Get summaries delivered to your inbox
-- 📊 **Meeting History** - Browse and search past meetings
-- ⚡ **Real-time Processing** - See transcriptions as the meeting progresses
+- **Real-time Audio Recording** - Capture Google Meet audio directly from the browser
+- **AI Transcription** - Powered by Cloudflare Workers AI (Whisper model)
+- **Smart Summarization** - Uses Llama 3.3 70B to generate structured summaries
+- **Cloud Storage** - Secure storage with Cloudflare R2
+- **Google OAuth** - Seamless authentication
+- **Email Notifications** - Get summaries delivered to your inbox
+- **Meeting History** - Browse and search past meetings
+- **Real-time Processing** - See transcriptions as the meeting progresses
 
 ### AI-Powered Insights
 - **Structured Summaries** - Title, participants, topics, decisions, action items
@@ -44,7 +91,7 @@ MeetMate is a Chrome extension that leverages Cloudflare Workers AI to automatic
 - **Action Items Extraction** - Automatic to-do list generation
 - **Tone Analysis** - Understand meeting sentiment
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────┐
@@ -153,7 +200,7 @@ meetmate-extension/                    # 🧩 Chrome Extension (Vite + React)
 └── vite.config.js                     # Vite bundler configuration
 ```
 
-## 🚀 Setup & Installation
+## Setup & Installation
 
 ### Prerequisites
 - Node.js 18+ and npm

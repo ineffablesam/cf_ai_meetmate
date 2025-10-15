@@ -167,23 +167,26 @@ function Dashboard() {
               onChange={(e) => setMeetingName(e.target.value)}
               placeholder="e.g., Team Standup, Client Call"
               disabled={isStarting || isRecording}
-              className="bg-[#000] w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
+              className="bg-[#f8f8f8] text-black w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
             />
           </div>
 
           <div className="flex items-center">
-            <input
-              type="checkbox"
-              id="realtime"
-              checked={realtimeProcessing}
-              onChange={(e) => setRealtimeProcessing(e.target.checked)}
-              disabled={isStarting || isRecording}
-              className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 disabled:cursor-not-allowed"
-            />
-            <label htmlFor="realtime" className="ml-2 text-sm text-gray-700">
-              Enable real-time processing (experimental)
-            </label>
-          </div>
+              <input
+                type="checkbox"
+                id="realtime"
+                checked={realtimeProcessing}
+                onChange={(e) => setRealtimeProcessing(e.target.checked)}
+                disabled={isStarting || isRecording}
+                className="w-4 h-4 appearance-none rounded border border-[#FF6633] bg-white checked:bg-[#FF6633] checked:border-[#FF6633] focus:ring-2 focus:ring-offset-1 focus:ring-[#FF6633] disabled:cursor-not-allowed transition-colors relative
+                  before:content-[''] before:absolute before:inset-0 before:flex before:items-center before:justify-center before:text-white before:font-bold before:opacity-0 checked:before:opacity-100 checked:before:content-['✓']"
+              />
+              <label htmlFor="realtime" className="ml-2 text-sm text-gray-700">
+                Enable real-time processing (experimental)
+              </label>
+            </div>
+
+
 
           <button
             onClick={handleStartRecording}
@@ -198,7 +201,7 @@ function Dashboard() {
             ) : isRecording ? (
               'Recording in Progress'
             ) : (
-              '🎙️ Start Recording'
+              'Start Recording'
             )}
           </button>
         </div>
