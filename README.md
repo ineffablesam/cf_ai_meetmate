@@ -652,9 +652,3 @@ zip -r meetmate-extension.zip . -x "*.git*" "*.DS_Store"
 - GitHub: [@ineffablesam](https://github.com/ineffablesam)
 - Email: samuelphilip2k3@gmail.com
 - LinkedIn: [Open LinkedIn](http://linkedin.com/in/samuel-philip-v/)
-
----
-
-**Built with ❤️ for Cloudflare Early Talent 2026**
-
-*This project demonstrates practical applications of Cloudflare's edge computing, serverless databases, object storage, and AI capabilities in solving real-world productivity challenges.*
